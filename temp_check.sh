@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Set the threshold temperature in Celsius
 THRESHOLD=80
 
