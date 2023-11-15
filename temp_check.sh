@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Set the threshold temperature in Celsius
 THRESHOLD=80
 
@@ -39,7 +37,7 @@ while true; do
 
     # Compare the temperature of each core with the threshold and send an email if any of them is higher
     if [ $TEMP1 -gt $THRESHOLD ] || [ $TEMP2 -gt $THRESHOLD ] || [ $TEMP3 -gt $THRESHOLD ] || [ $TEMP4 -gt $THRESHOLD ]; then
-      echo "CPU temperature is above the threshold of $THRESHOLD°C. \nThe temperature of each core is: Core 0: $TEMP1°C, Core 1: $TEMP2°C, Core 2: $TEMP3°C, Core 3: $TEMP4°C" | mail -s "CPU Temperature Alert" $EMAIL
+      printf "CPU temperature is above the threshold of $THRESHOLD°C. \nThe temperature of each core is: Core 0: $TEMP1°C, Core 1: $TEMP2°C, Core 2: $TEMP3°C, Core 3: $TEMP4°C" | mail -s "CPU Temperature Alert" $EMAIL
       # Update the last email time to the current time
       LAST_EMAIL=$NOW
       # Log the email alert
