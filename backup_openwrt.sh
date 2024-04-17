@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 
 # Specify the backup directory
 backup_dir="/root/backup"
